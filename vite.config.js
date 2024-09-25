@@ -9,9 +9,12 @@ export default defineConfig(({ command }) => {
         define: {
             [command === 'serve' ? 'global' : '_global']: {},
         },
+        base: '/goit-js-hw-09/',  // Base path for GitHub Pages
         root: 'src',
         build: {
             sourcemap: true,
+            outDir: '../dist',  // Correct output directory
+            emptyOutDir: true,
             rollupOptions: {
                 input: glob.sync('./src/*.html'),
                 output: {
@@ -34,8 +37,6 @@ export default defineConfig(({ command }) => {
                     },
                 },
             },
-            outDir: '../dist',
-            emptyOutDir: true,
         },
         plugins: [
             injectHTML(),
