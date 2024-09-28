@@ -1,50 +1,16 @@
 .gallery {
-	list-style: none;
-	display: flex;
-	gap: 1em;
-	margin-left: auto;
-	flex-wrap: wrap;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.gallery-image {
-	width: 450px;
-	height: 300px;
+.gallery-item {
+  flex: 1 1 calc(33.333% - 10px);
 }
 
-.feedback-form {
-	display: flex;
-	flex-direction: column;
-	gap: 1em;
-}
-
-.feedback-form label {
-	font-weight: bold;
-	display: flex;
-	flex-direction: column;
-}
-
-.feedback-form input,
-.feedback-form textarea{
-    padding: 0.5em;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 0.25em;
-    width: auto; /* Ensure the input width is only as wide as its content */
-    align-self: flex-start; /* Align the input to the start of the flex container */
-}
-
-.feedback-form button {
-    
-	padding: 0.5em 1em;
-	background-color: #007bff;
-	color: white;
-	border: none;
-	border-radius: 0.25em;
-	cursor: pointer;
-    width: auto;
-    align-self: flex-start;
-}
-
-.feedback-form button:hover {
-    background-color: #0056b3; /* Optional: Change background color on hover */
+.gallery-link img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
 }
