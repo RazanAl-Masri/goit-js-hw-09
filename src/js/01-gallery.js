@@ -1,6 +1,10 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const galleryItems = [
-  { preview: 'small-image1.jpg', original: 'large-image1.jpg', description: 'Image 1' },
-  { preview: 'small-image2.jpg', original: 'large-image2.jpg', description: 'Image 2' },
+  { preview: 'https://placekitten.com/200/300', original: 'https://placekitten.com/800/1200', description: 'Cute Kitten 1' },
+  { preview: 'https://placekitten.com/210/300', original: 'https://placekitten.com/810/1200', description: 'Cute Kitten 2' },
+  { preview: 'https://placekitten.com/220/300', original: 'https://placekitten.com/820/1200', description: 'Cute Kitten 3' }
 ];
 
 const galleryContainer = document.querySelector('.gallery');
@@ -15,3 +19,9 @@ const galleryMarkup = galleryItems
   )
   .join('');
 galleryContainer.innerHTML = galleryMarkup;
+
+// Initialize SimpleLightbox after items are added to the DOM
+let gallery = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
